@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'chat/style.css' %}" />
+    <title>Chatbox</title>
+  </head>
+  <body>
+    <div class="chatbox">
+      <div id="chatlog">
+        <h2>Chatbox</h2>
+      </div>
+      <div class="input-area">
+        <input
+          type="text"
+          id="userInput"
+          placeholder="Type a message..."
+          autocomplete="off"
+        />
+        <button onclick="sendMessage()">Send</button>
+        <button onclick="clearChat()">Clear</button>
+      </div>
+    </div>
+    <script>
+      function sendMessage() {
+        let userMessage = document.getElementById("userInput").value;
+        if (userMessage.trim() == "") return; // ignore empty messages
+
+        let chatlog = document.getElementById("chatlog");
+        chatlog.innerHTML += "<p><b>You:</b> " + userMessage + "</p>";
+
+        // Show "Bot is typing..." message
+        let typingMessage = document.createElement("p");
+        typingMessage.innerHTML = "<b>Bot:</b> <i>typing...</i>";
+        chatlog.appendChild(typingMessage);
+        chatlog.scrollTop = chatlog.scrollHeight;
+
+        // Delay bot response by 2.5 seconds
+        setTimeout(() => {
+          fetch("/get_response/?message=" + encodeURIComponent(userMessage))
+            .then((response) => response.json())
+            .then((data) => {
+              // Remove the "typing..." message
+              chatlog.removeChild(typingMessage);
+
+              // Show the actual bot reply
+              chatlog.innerHTML += "<p><b>Bot:</b> " + data.reply + "</p>";
+              chatlog.scrollTop = chatlog.scrollHeight;
+            });
+        }, 2500); // 2500 milliseconds = 2.5 seconds
+
+        document.getElementById("userInput").value = ""; // clear input
+      }
+
+      function clearChat(){
+        document.getElementById("chatlog").innerHTML = "";
+      }
+    </script>
+  </body>
+</html>

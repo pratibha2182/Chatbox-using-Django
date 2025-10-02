@@ -1,0 +1,122 @@
+/* General body styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1e1e2f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: white; /* default text color */
+}
+
+/* Chatbox container */
+.chatbox {
+    width: 450px;
+    max-width: 95%;
+    background-color: #2b2b3a;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: white; /* ensure text inside is white */
+}
+
+/* Chat header */
+#chatlog h2 {
+    text-align: center;
+    background: linear-gradient(90deg, #ff6ec4, #7873f5);
+    color: white; /* heading text white */
+    margin: 0;
+    padding: 20px 0;
+    font-size: 1.8em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Chat messages area */
+#chatlog {
+    height: 360px;
+    overflow-y: auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: #2b2b3a;
+    scroll-behavior: smooth;
+    color: white; /* default messages white */
+}
+
+/* Chat bubbles */
+#chatlog p {
+    margin: 0;
+    padding: 12px 18px;
+    border-radius: 25px;
+    max-width: 75%;
+    word-wrap: break-word;
+    line-height: 1.4;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    font-size: 0.95em;
+    color: white; /* text white */
+}
+
+/* User message bubble */
+#chatlog p.user {
+    background-color: #4a90e2;
+    color: white; /* ensure white text */
+    align-self: flex-end;
+    text-align: right;
+}
+
+/* Bot message bubble */
+#chatlog p.bot {
+    background-color: #3c3c50;
+    color: white; /* ensure white text */
+    align-self: flex-start;
+    text-align: left;
+}
+
+/* Input area */
+.input-area {
+    display: flex;
+    padding: 15px;
+    gap: 10px;
+    border-top: 1px solid #444;
+    background-color: #2b2b3a;
+    color: white;
+}
+
+/* Input field */
+.input-area input[type="text"] {
+    flex: 1;
+    padding: 12px 15px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    background-color: #3c3c50;
+    color: white; /* text white inside input */
+    font-size: 1em;
+}
+
+/* Placeholder color */
+.input-area input::placeholder {
+    color: #ccc; /* light placeholder */
+}
+
+/* Buttons */
+.input-area button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 25px;
+    background-color: #ff6ec4;
+    color: white; /* button text white */
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.input-area button:hover {
+    background-color: #d64aa3;
+}

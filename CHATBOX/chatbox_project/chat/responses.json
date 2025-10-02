@@ -1,0 +1,20 @@
+{
+  "hello|hi|hey": ["hello!", "hi there!", "hey!"],
+  "how are you|how's it going": ["i am good, thank you!", "doing well, how about you?", "i'm fine, and you?"],
+  "what is your name": ["i am a python chatbot.", "you can call me chatpy!"],
+  "what do you do": ["i chat with people and answer questions.", "i am here to help you with information."],
+  "good morning": ["good morning!", "morning! how are you today?"],
+  "good night": ["good night!", "sleep well!"],
+  "thank you|thanks": ["you're welcome!", "no problem!", "glad to help!"],
+  "sorry": ["no worries!", "it's okay!", "don't worry about it!"],
+  "bye|goodbye": ["bye!", "see you later!", "take care!"],
+  "what is the capital of france": ["the capital of france is paris."],
+  "who is the ceo of tesla": ["elon musk is the ceo of tesla."],
+  "what is ai": ["ai stands for artificial intelligence, which simulates human intelligence in machines."],
+  "how to write a python function": ["in python, you can define a function using the 'def' keyword. example: def my_function(): ..."],
+  "tell me a joke": ["why did the computer show up at work late? it had a hard drive!", "i would tell you a joke about UDP, but you might not get it."],
+  "how are you feeling today": ["i am feeling great! how about you?", "i'm doing well, thanks for asking!"],
+  "what is your favorite color": ["i like blue, it reminds me of the sky.", "i don't see colors like humans, but i like bright ones!"],
+  "do you like music": ["yes! i enjoy all kinds of tunes.", "i love music, what about you?"],
+  "how old are you": ["i am a chatbot, i don't age!", "i was created recently, but age doesn't apply to me."]
+}
